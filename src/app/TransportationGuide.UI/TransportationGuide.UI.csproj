@@ -313,6 +313,7 @@
     <Content Include="Themes\ProperTheme\css\font\FortAwesome\font\fontawesome-webfont_aea8981e.eot" />
     <Content Include="Themes\ProperTheme\css\font\FortAwesome\font\fontawesome-webfont_aea8981e.ttf" />
     <Content Include="Themes\ProperTheme\css\font\FortAwesome\font\fontawesome-webfont_aea8981e.woff" />
+    <Content Include="Views\Shared\_DateOfDay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

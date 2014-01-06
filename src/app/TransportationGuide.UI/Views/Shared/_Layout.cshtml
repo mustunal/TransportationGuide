@@ -1,11 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Proper - Real Estate Responsive Template</title>
+    <title>Şehirler Arası Ulaşım İçin Tek Rehber</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="Real Estate Template" />
-    <meta name="description" content="Proper - Real Estate Responsive HTML5 Template" />
-    <meta name="author" content="yobio.indiewebstyle.com" />
+    <meta name="keywords" content="Şehirler Arası Ulaşım" />
+    <meta name="description" content="Bu site farklı sehirler arasında alternatif ulaşım tiplerini tek bir kaynaktan görebilmek içindir" />
+    <meta name="author" content="melek.akpinar" />
     <!-- Bootstrap -->
     <link href="~/Content/Assets/css/bootstrap.min.css" rel="stylesheet" media="screen" />
     <link href="~/Content/Assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
@@ -28,11 +28,8 @@
         <!-- start breadcrumb -->
         <div id="breadcrumb-wrapper">
             <div class="container">
-                <div class="pull-left">Sunday, May 18 2013</div>
-                <div class="pull-right">
-                    <a href="login.html">Log In</a>
-                    <a href="sing_up.html">Sign Up</a>
-                </div>
+                @Html.Partial("_DateOfDay")
+                @Html.Partial("_LoginPartial")
             </div>
         </div><!-- end breadcrumb -->
         <!-- start header-wrapper -->
@@ -41,7 +38,7 @@
                 <div class="panel">
                     <div class="row-fluid">
                         <div class="span9 right-line">
-                            <a class="brand" href="index.html"><h1 class="font-caly"><img src="~/Themes/ProperTheme/images/logo.png" width="40" alt="logo" /> Proper <small class="visible-desktop visible-tablet">Real Estate Template</small></h1></a>
+                            <a class="brand" href="index.html"><h1 class="font-caly"><img src="~/Themes/ProperTheme/images/logo.png" width="40" alt="logo" /> Rehberiniz<small class="visible-desktop visible-tablet">       Aradığınızı Burada Bulacaksınız..</small></h1></a>
                         </div>
                         <div class="span3 ">
                             <div class="clearfix">

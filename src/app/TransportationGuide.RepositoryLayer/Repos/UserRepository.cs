@@ -10,7 +10,7 @@ namespace TransportationGuide.RepositoryLayer.Repos
 {
     public class UserRepository : IRepository<User>
     {
-        DbContext _context = null;
+        readonly DbContext _context = null;
 
         public UserRepository(DbContext context)
         {

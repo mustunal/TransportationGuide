@@ -24,15 +24,25 @@
                     <hr />
                 </div>
                 <label>Username</label>
-                <input type="text" class="input-block-level" name="Username" />
+                <input class="input-block-level" data-val="true" id="Username" name="Username" type="text" />
                 <label>Password</label>
                 <input type="password" class="input-block-level" name="Password" />
                 <label class="checkbox">
-                @Html.EditorFor(model => model.RememberMe) Beni Hatırla
+                @Html.CheckBoxFor(m => m.RememberMe) Beni Hatırla
                 </label>
                 <hr />
+                
+                if (ViewBag.LoginResultMessage != null) 
+                {
+                    <div class="alert ">
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                        <strong>@ViewBag.LoginResultMessage</strong>
+                    </div>
+                }
+                
+                
                 <div class="clearfix">
-                    <input type="submit" value="Login" class="btn btn-proper" />&nbsp;&nbsp; <a href="#">Şifrenizi mi Unuttunuz?</a>
+                    <input type="submit" value="Giriş Yap" class="btn btn-proper" />&nbsp;&nbsp; <a href="#">Şifrenizi mi Unuttunuz?</a>
                 </div>
             }
         </div>

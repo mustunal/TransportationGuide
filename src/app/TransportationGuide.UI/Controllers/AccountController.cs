@@ -40,18 +40,23 @@ namespace TransportationGuide.UI.Controllers
             if (ModelState.IsValid)
             {
                 bool userLoggedIn = true;
-                var claims = new List<Claim>();
-                claims.Add(new Claim(ClaimTypes.Name, "Murat"));
-                claims.Add(new Claim(ClaimTypes.Email, "m@m.com"));
+                if (userLoggedIn)
+                {
+                    var claims = new List<Claim>();
+                    claims.Add(new Claim(ClaimTypes.Name, "Murat"));
+                    claims.Add(new Claim(ClaimTypes.Email, "m@m.com"));
 
-                var identity = new ClaimsIdentity(claims, DefaultAuthenticationTypes.ApplicationCookie);
-                var authManager = Request.GetOwinContext().Authentication;
-                authManager.SignIn(new AuthenticationProperties() { IsPersistent = model.RememberMe }, identity);
+                    var identity = new ClaimsIdentity(claims, DefaultAuthenticationTypes.ApplicationCookie);
+                    var authManager = Request.GetOwinContext().Authentication;
+                    authManager.SignIn(new AuthenticationProperties() { IsPersistent = model.RememberMe }, identity);
 
-                if (Url.IsLocalUrl(returnUrl))
-                    return Redirect(returnUrl);
+                    if (Url.IsLocalUrl(returnUrl))
+                        return Redirect(returnUrl);
+                    else
+                        return RedirectToAction("Index", "Home");
+                }
                 else
-                    return RedirectToAction("Index", "Home");
+                    ViewBag.LoginResultMessage = "Hatalı Kullanıcı Adı/Sifre!";
             }
             return View(model);
         }

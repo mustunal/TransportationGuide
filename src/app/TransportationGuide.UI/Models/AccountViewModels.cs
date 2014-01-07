@@ -28,7 +28,7 @@ namespace TransportationGuide.UI.Models
         public string ConfirmPassword { get; set; }
     }
 
-    public class LoginViewModel
+    public class LoginViewModel2
     {
         [Required]
         [Display(Name = "User name")]

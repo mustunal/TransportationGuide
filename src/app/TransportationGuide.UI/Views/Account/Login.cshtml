@@ -15,7 +15,7 @@
                 @Html.AntiForgeryToken()
             
                 <div class="member-login">
-                    <img src="proper_theme/images/agents/a3.jpg" class="img-polaroid" width="90" alt="image-login" />
+                    <img src="~/Themes/ProperTheme/images/agents/a3.jpg" class="img-polaroid" width="90" alt="image-login" />
                     <div class="member-desc">
                         <h3>Giriş :</h3>
                         <a href="#">Lütfen Bilgilerinizi Doldurunuz..</a>
@@ -28,7 +28,7 @@
                 <label>Password</label>
                 <input type="password" class="input-block-level" name="Password" />
                 <label class="checkbox">
-                    <input type="checkbox" name="RememberMe" />  Remeber Password
+                @Html.EditorFor(model => model.RememberMe) Beni Hatırla
                 </label>
                 <hr />
                 <div class="clearfix">

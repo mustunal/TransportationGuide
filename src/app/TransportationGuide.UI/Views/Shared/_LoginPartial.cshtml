@@ -1,5 +1,19 @@
-﻿
+﻿@using Microsoft.AspNet.Identity
+
 <div class="pull-right">
-    <a href="Account/Login">Giriş Yap</a>
-    <a href="sing_up.html">Üye Ol</a>
+    @if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("LogOff","Account",FormMethod.Post,new{ id="logoutForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <a href="#">Merhaba, @User.Identity.GetUserName()</a>
+            <a href="/Account/Manage">Hesap</a>
+            <a href="javascript:document.getElementById('logoutForm').submit()">Çıkış</a>
+        }
+    }
+    else
+    {
+        <a href="~/Account/Login">Giriş Yap</a>
+        <a href="~/Account/Register">Üye Ol</a>
+    }
 </div>

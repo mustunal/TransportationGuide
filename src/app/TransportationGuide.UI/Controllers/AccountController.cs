@@ -81,5 +81,12 @@ namespace TransportationGuide.UI.Controllers
             return View();
         }
 
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(RegisterViewModel model)
+        {
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

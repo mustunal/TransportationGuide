@@ -43,7 +43,7 @@ namespace TransportationGuide.UI.Models
         public bool RememberMe { get; set; }
     }
 
-    public class RegisterViewModel
+    public class RegisterViewModel2
     {
         [Required]
         [Display(Name = "User name")]

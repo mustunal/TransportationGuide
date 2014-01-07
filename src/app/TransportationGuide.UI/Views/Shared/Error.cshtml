@@ -1,9 +1,35 @@
 ﻿@model System.Web.Mvc.HandleErrorInfo
 
 @{
-    ViewBag.Title = "Error";
+    ViewBag.Title = "Hata";
 }
-
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
-
+<!--Start Content-->
+<div id="content">
+    <!--Start Main Title-->
+    <div id="main-title-content">
+        <img src="~/Themes/ProperTheme/images/properties/slider/fslider/p1.jpg" id="bg" alt="main-title" />
+        <div class="container">
+            <div class="panel">
+                <h1>Aradığınız Sayfa Bulunamadı</h1>
+                <p>...</p>
+            </div>
+        </div>
+    </div> <!--End Main Title-->
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span1 visible-desktop">
+                <h2 class="main-heading bottom-line line-after ">&nbsp;</h2>
+            </div>
+            <div class="span11">
+                <div class="panel left-line">
+                    <h2 class="main-heading bottom-line visible-desktop">&nbsp;</h2>
+                    <div class="box-error box-panel">
+                        404
+                        <p>Üzgünüz, Aradığınız sayfa sistemde bulunmuyor..</p>
+                    </div>
+                    <a href="~/Home/Index" class="btn btn-proper"><i class="icon-angle-left"></i> Anasayfaya Geri Dön </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--EndContent-->     

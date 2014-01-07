@@ -8,7 +8,7 @@ using TransportationGuide.RepositoryLayer.Repos;
 
 namespace TransportationGuide.RepositoryLayer.UnitOfWorks
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
         IRepository<User> UserRepository { get; }
 

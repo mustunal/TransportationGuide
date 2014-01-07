@@ -9,7 +9,7 @@ using TransportationGuide.RepositoryLayer.Repos;
 
 namespace TransportationGuide.RepositoryLayer.UnitOfWorks
 {
-    public class UnitOfWork : IUnitOfWork, IDisposable
+    public class UnitOfWork : IUnitOfWork
     {
         readonly string ConnectionString;
         readonly DbContext _context = null;

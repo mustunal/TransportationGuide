@@ -15,5 +15,17 @@ namespace TransportationGuide.UI.Controllers
     public class AccountController : Controller
     {
 
+
+        public ActionResult Login(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
     }
 }

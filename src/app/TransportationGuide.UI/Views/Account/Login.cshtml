@@ -1,0 +1,43 @@
+﻿@model TransportationGuide.ViewModels.AccountViewModels.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+<!-- start Content -->
+<div id="content">
+
+    <div class="container">
+        <div class="panel proper-form-bg">
+            @using (Html.BeginForm("Login","Account",new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,new { @class="proper-login", role= "form" }))
+            {
+                @Html.AntiForgeryToken()
+            
+                <div class="member-login">
+                    <img src="proper_theme/images/agents/a3.jpg" class="img-polaroid" width="90" alt="image-login" />
+                    <div class="member-desc">
+                        <h3>Giriş :</h3>
+                        <a href="#">Lütfen Bilgilerinizi Doldurunuz..</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr />
+                </div>
+                <label>Username</label>
+                <input type="text" class="input-block-level" name="Username" />
+                <label>Password</label>
+                <input type="password" class="input-block-level" name="Password" />
+                <label class="checkbox">
+                    <input type="checkbox" name="RememberMe" />  Remeber Password
+                </label>
+                <hr />
+                <div class="clearfix">
+                    <input type="submit" value="Login" class="btn btn-proper" />&nbsp;&nbsp; <a href="#">Şifrenizi mi Unuttunuz?</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+

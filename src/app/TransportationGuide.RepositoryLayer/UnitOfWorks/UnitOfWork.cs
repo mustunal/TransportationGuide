@@ -23,7 +23,7 @@ namespace TransportationGuide.RepositoryLayer.UnitOfWorks
             _context.Configuration.LazyLoadingEnabled = true;
         }
 
-        public IRepository<User> EmployeeRepository
+        public IRepository<User> UserRepository
         {
             get
             {

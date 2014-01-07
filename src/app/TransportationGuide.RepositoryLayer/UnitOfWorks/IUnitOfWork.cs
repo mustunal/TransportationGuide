@@ -10,7 +10,7 @@ namespace TransportationGuide.RepositoryLayer.UnitOfWorks
 {
     public interface IUnitOfWork
     {
-        IRepository<User> EmployeeRepository { get; }
+        IRepository<User> UserRepository { get; }
 
         void Commit();
         void RollBack();

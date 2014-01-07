@@ -11,6 +11,7 @@ using Microsoft.Owin.Security;
 using TransportationGuide.UI.Models;
 using WebMatrix.WebData;
 using TransportationGuide.ViewModels.AccountViewModels;
+using TransportationGuide.BusinessLogicLayer;
 
 namespace TransportationGuide.UI.Controllers
 {
@@ -86,7 +87,13 @@ namespace TransportationGuide.UI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterViewModel model)
         {
-            return RedirectToAction("Index", "Home");
+            if (ModelState.IsValid)
+            {
+                bool isNewUserAdded = UserBL.AddNewUser(model);
+                if (isNewUserAdded)
+                    return RedirectToAction("Index", "Home");
+            }
+            return View(model);
         }
     }
 }

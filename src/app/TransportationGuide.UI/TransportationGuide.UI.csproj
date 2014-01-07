@@ -323,6 +323,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TransportationGuide.BusinessLogicLayer\TransportationGuide.BusinessLogicLayer.csproj">
+      <Project>{5d1e2fa4-ecf0-481a-a323-1a22f1daffce}</Project>
+      <Name>TransportationGuide.BusinessLogicLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TransportationGuide.ViewModels\TransportationGuide.ViewModels.csproj">
       <Project>{ca0ba89a-cbf1-4184-8c41-8505fe0cddce}</Project>
       <Name>TransportationGuide.ViewModels</Name>

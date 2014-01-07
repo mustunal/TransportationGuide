@@ -39,8 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="UserBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TransportationGuide.Entities\TransportationGuide.Entities.csproj">
+      <Project>{8b7594d9-41d6-4754-b2c8-e3a415b87dbe}</Project>
+      <Name>TransportationGuide.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransportationGuide.RepositoryLayer\TransportationGuide.RepositoryLayer.csproj">
+      <Project>{5631734e-ee86-4196-b4c1-a0ae19db9c49}</Project>
+      <Name>TransportationGuide.RepositoryLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransportationGuide.ViewModels\TransportationGuide.ViewModels.csproj">
+      <Project>{ca0ba89a-cbf1-4184-8c41-8505fe0cddce}</Project>
+      <Name>TransportationGuide.ViewModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

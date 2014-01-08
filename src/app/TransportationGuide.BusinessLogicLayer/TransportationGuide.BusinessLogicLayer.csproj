@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountBL.cs" />
+    <Compile Include="CommonBL.cs" />
     <Compile Include="OperationResults\OperationResult.cs" />
     <Compile Include="OperationResults\OperationResultStatus.cs" />
     <Compile Include="UserBL.cs" />

@@ -30,6 +30,12 @@ namespace TransportationGuide.RepositoryLayer.Repos
             return true;
         }
 
+        public bool Update(User user)
+        {
+            _context.Entry(user).State = EntityState.Modified;
+            return true;
+        }
+
         public User FindById(int entityId)
         {
             return _context.Users.SingleOrDefault(x => x.Id == entityId);

@@ -14,23 +14,27 @@
                     {
                         @Html.AntiForgeryToken()
                             <table class="table">
+                                <tr><td>@Html.HiddenFor(m=>m.User.Id)</td></tr>
                                 <tr>
                                     <th>Adınız :  </th>
-                                    <td>@Html.EditorFor(m => m.User.Name, new {  @class = "input-block-level", @required = "true" }) </td>
+                                    <td>@Html.TextBoxFor(m => m.User.Name, new {  @class = "input-block-level", @required = "true" }) </td>
                                 </tr>
                                 <tr>
                                     <th>Soyadınız : </th>
-                                    <td>@Html.TextBoxFor(m => m.User.Surname, new {@name="User.Surname", @class = "input-block-level", @required = "true" })</td>
+                                    <td>@Html.TextBoxFor(m => m.User.Surname, new { @class = "input-block-level", @required = "true" })</td>
                                 </tr>
                                 <tr>
                                     <th>Kullanıcı Adınız : </th>
-                                    <td>@Html.TextBoxFor(m => m.User.Username, new {@name="User.Username", @class = "input-block-level", @required = "true" })</td>
+                                    <td>@Html.TextBoxFor(m => m.User.Username, new { @class = "input-block-level", @required = "true" })</td>
                                 </tr>
                                 <tr>
                                     <th>Emailiniz : </th>
-                                    <td>@Html.TextBoxFor(m => m.User.Email, new {@name="User.Email" ,@type = "email", @class = "input-block-level", @required = "true" })</td>
+                                    <td>@Html.TextBoxFor(m => m.User.Email, new { @type = "email", @class = "input-block-level", @required = "true" })</td>
                                 </tr>
-                                
+                                <tr>
+                                    <th>Doğum Tarihiniz : </th>
+                                    <td>@Html.TextBox("User.BirthDate", Model.User.BirthDate.Value.ToString("yyyy-MM-dd"), new { @type = "date", @class = "input-block-level", @required = "true" })</td>
+                                </tr>
                                 <tr>
                                     <td></td>
                                     <td>

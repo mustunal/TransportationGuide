@@ -12,7 +12,7 @@ namespace TransportationGuide.UI
     {
         public static void RegisterCustomModelBinders()
         {
-            ModelBinders.Binders.Add(typeof(UserViewModel), new UserModelBinder());
+            ModelBinders.Binders.Add(typeof(UserSessionData), new UserModelBinder());
         }
     }
 }

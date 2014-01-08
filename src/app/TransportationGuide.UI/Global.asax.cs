@@ -7,6 +7,7 @@ using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using TransportationGuide.BusinessLogicLayer;
 
 namespace TransportationGuide.UI
 {
@@ -22,6 +23,8 @@ namespace TransportationGuide.UI
             ModelBinderConfig.RegisterCustomModelBinders();
 
             AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.Name;
+
+            CommonBL.InitializeDataBase();
         }
     }
 }

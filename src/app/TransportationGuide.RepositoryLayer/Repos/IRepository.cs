@@ -11,6 +11,7 @@ namespace TransportationGuide.RepositoryLayer.Repos
     {
         bool Add(T newEntity);
         bool Delete(T entity);
+        bool Update(T entity);
         T FindById(int entityId);
         IEnumerable<T> GetAll();
     }

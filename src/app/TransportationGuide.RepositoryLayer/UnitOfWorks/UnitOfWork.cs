@@ -24,10 +24,10 @@ namespace TransportationGuide.RepositoryLayer.UnitOfWorks
             ConnectionString = "TransportationGuideConnectionString";
             _context = new EntitiesContext(ConnectionString);
             _context.Configuration.LazyLoadingEnabled = true;
-            InitializeDataBase();
+            //InitializeDataBase();
         }
 
-        private void InitializeDataBase()
+        public void InitializeDataBase()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<EntitiesContext, Configuration>());
             _context.Database.Initialize(true);

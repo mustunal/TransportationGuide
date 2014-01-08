@@ -13,6 +13,7 @@ using WebMatrix.WebData;
 using TransportationGuide.ViewModels.AccountViewModels;
 using TransportationGuide.BusinessLogicLayer;
 using TransportationGuide.BusinessLogicLayer.OperationResults;
+using TransportationGuide.ViewModels.UserViewModels;
 
 namespace TransportationGuide.UI.Controllers
 {
@@ -86,7 +87,7 @@ namespace TransportationGuide.UI.Controllers
 
 
                     //Session Ayarla
-                    HttpContext.Session["User"] = user;
+                    HttpContext.Session["User"] = new UserSessionData { Id = user.Id, Name = user.Name, Surname = user.Surname, Password = user.Password, Username = user.Username };
 
                     if (Url.IsLocalUrl(returnUrl))
                         return Redirect(returnUrl);

@@ -112,5 +112,32 @@ namespace TransportationGuide.BusinessLogicLayer
             }
             return _userModel;
         }
+
+        public static OperationResult UpdateUserProfile(UserProfileViewModel userProfile)
+        {
+            OperationResult _result = null;
+            using (var uow = new UnitOfWork())
+            {
+                try
+                {
+                    var user = uow.UserRepository.FindById(userProfile.User.Id);
+
+                    user.BirthDate = userProfile.User.BirthDate;
+                    user.Email = userProfile.User.Email;
+                    user.Name = userProfile.User.Name;
+                    user.Surname = userProfile.User.Surname;
+                    user.Username = userProfile.User.Username;
+
+                    uow.UserRepository.Update(user);
+                    uow.Commit();
+                    _result = new OperationResult(OperationResultStatus.Success, "Profil Güncellendi");
+                }
+                catch (Exception ex)
+                {
+                    _result = new OperationResult(OperationResultStatus.Error, ex.Message);
+                }
+            }
+            return _result;
+        }
     }
 }

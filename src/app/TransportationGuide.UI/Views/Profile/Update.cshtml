@@ -33,7 +33,7 @@
                                 </tr>
                                 <tr>
                                     <th>Doğum Tarihiniz : </th>
-                                    <td>@Html.TextBox("User.BirthDate", Model.User.BirthDate.Value.ToString("yyyy-MM-dd"), new { @type = "date", @class = "input-block-level", @required = "true" })</td>
+                                    <td>@Html.TextBox("User.BirthDate", String.Format("{0:yyyy-MM-dd}", Model.User.BirthDate), new { @type = "date", @class = "input-block-level", @required = "true" })</td>
                                 </tr>
                                 <tr>
                                     <td></td>

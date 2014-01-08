@@ -6,12 +6,22 @@ using System.Web.Mvc;
 using TransportationGuide.BusinessLogicLayer;
 using TransportationGuide.ViewModels.UserViewModels;
 using TransportationGuide.BusinessLogicLayer.OperationResults;
+using Microsoft.Owin.Security;
+using System.Security.Claims;
 
 namespace TransportationGuide.UI.Controllers
 {
     [Authorize]
     public class ProfileController : Controller
     {
+        private IAuthenticationManager AuthenticationManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Authentication;
+            }
+        }
+
         //
         // GET: /Profile/
         public ActionResult Index()
@@ -36,12 +46,17 @@ namespace TransportationGuide.UI.Controllers
             return PartialView("_ProfileMenu", userData);
         }
 
-        public ActionResult Update(int id)
+        public ActionResult Update(int id, UserSessionData userData)
         {
-            var userModel = UserBL.GetUserById(id);
-            UserProfileViewModel userProfileModel = new UserProfileViewModel { User = userModel };
+            if (userData.Id == id)
+            {
+                var userModel = UserBL.GetUserById(id);
+                UserProfileViewModel userProfileModel = new UserProfileViewModel { User = userModel };
 
-            return View("Update", userProfileModel);
+                return View("Update", userProfileModel);
+            }
+            else
+                return RedirectToAction("NotFound", "Home");
         }
 
         [HttpPost]

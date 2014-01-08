@@ -13,7 +13,8 @@ namespace TransportationGuide.RepositoryLayer.UnitOfWorks
     {
         readonly string ConnectionString;
         readonly DbContext _context = null;
-        UserRepository _userRepository = null;
+
+        IUserRepository _userRepository = null;
 
         public UnitOfWork()
         {
@@ -23,7 +24,7 @@ namespace TransportationGuide.RepositoryLayer.UnitOfWorks
             _context.Configuration.LazyLoadingEnabled = true;
         }
 
-        public IRepository<User> UserRepository
+        public IUserRepository UserRepository
         {
             get
             {

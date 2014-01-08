@@ -8,7 +8,7 @@ using TransportationGuide.Entities;
 
 namespace TransportationGuide.RepositoryLayer.Repos
 {
-    public class UserRepository : IRepository<User>
+    public class UserRepository : IUserRepository
     {
         readonly DbContext _context = null;
 

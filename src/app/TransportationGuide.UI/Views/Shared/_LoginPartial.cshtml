@@ -7,7 +7,7 @@
         {
             @Html.AntiForgeryToken()
             <a href="#">Merhaba, @User.Identity.GetUserName()</a>
-            <a href="/Account/Manage">Hesap</a>
+            <a href="/Profile/View">Hesap</a>
             <a href="javascript:document.getElementById('logoutForm').submit()">Çıkış</a>
         }
     }

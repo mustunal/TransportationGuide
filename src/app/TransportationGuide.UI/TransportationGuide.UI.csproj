@@ -318,6 +318,7 @@
     <Content Include="Views\Profile\_Layout.cshtml" />
     <Content Include="Views\Profile\_ViewStart.cshtml" />
     <Content Include="Views\Profile\_ProfileMenu.cshtml" />
+    <Content Include="Views\Profile\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

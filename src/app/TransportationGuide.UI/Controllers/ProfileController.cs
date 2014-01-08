@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TransportationGuide.BusinessLogicLayer;
 using TransportationGuide.ViewModels.UserViewModels;
 
 namespace TransportationGuide.UI.Controllers
@@ -32,6 +33,14 @@ namespace TransportationGuide.UI.Controllers
         public ActionResult LoadProfileMenu(UserViewModel userModel)
         {
             return PartialView("_ProfileMenu", userModel);
+        }
+
+        public ActionResult Update(int id)
+        {
+            var userModel = UserBL.GetUserById(id);
+            UserProfileViewModel userProfileModel = new UserProfileViewModel { User = userModel };
+
+            return View("Update", userProfileModel);
         }
     }
 }

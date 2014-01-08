@@ -63,7 +63,7 @@ namespace TransportationGuide.UI.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = "*")]
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut();

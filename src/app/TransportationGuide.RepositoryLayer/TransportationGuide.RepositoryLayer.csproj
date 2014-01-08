@@ -54,6 +54,10 @@
     <Compile Include="UnitOfWorks\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TransportationGuide.DataAccessLayer\TransportationGuide.DataAccessLayer.csproj">
+      <Project>{a789439f-fe28-45e0-81cf-0afab9e467f3}</Project>
+      <Name>TransportationGuide.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TransportationGuide.Entities\TransportationGuide.Entities.csproj">
       <Project>{8b7594d9-41d6-4754-b2c8-e3a415b87dbe}</Project>
       <Name>TransportationGuide.Entities</Name>

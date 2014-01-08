@@ -4,6 +4,8 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TransportationGuide.DataAccessLayer;
+using TransportationGuide.DataAccessLayer.Migrations;
 using TransportationGuide.Entities;
 using TransportationGuide.RepositoryLayer.Repos;
 
@@ -20,8 +22,14 @@ namespace TransportationGuide.RepositoryLayer.UnitOfWorks
         {
             //ConnectionStringi Configden al
             ConnectionString = "ConnectionString";
-            _context = new DbContext(ConnectionString);
+            _context = new EntitiesContext(ConnectionString);
             _context.Configuration.LazyLoadingEnabled = true;
+        }
+
+        private void InitializeDataBase()
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<EntitiesContext, Configuration>());
+            _context.Database.Initialize(true);
         }
 
         public IUserRepository UserRepository

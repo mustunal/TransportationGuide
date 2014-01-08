@@ -10,11 +10,19 @@ namespace TransportationGuide.DataAccessLayer
 {
     public class EntitiesContext : DbContext
     {
+
         public EntitiesContext()
             : base("TransportationGuideConnectionString")
         {
+
+        }
+
+        public EntitiesContext(string connectionStringName)
+            : base(connectionStringName)
+        {
             
         }
+
         public DbSet<User> Users { get; set; }
     }
 }

@@ -4,43 +4,51 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TransportationGuide.DataAccessLayer;
 using TransportationGuide.Entities;
 
 namespace TransportationGuide.RepositoryLayer.Repos
 {
     public class UserRepository : IUserRepository
     {
-        readonly DbContext _context = null;
+        readonly EntitiesContext _context = null;
 
-        public UserRepository(DbContext context)
+        public UserRepository(EntitiesContext context)
         {
             _context = context;
         }
 
         public bool Add(User newEntity)
         {
-            throw new NotImplementedException();
+            _context.Users.Add(newEntity);
+            return true;
         }
 
         public bool Delete(User entity)
         {
-            throw new NotImplementedException();
+            _context.Users.Remove(entity);
+            return true;
         }
 
         public User FindById(int entityId)
         {
-            throw new NotImplementedException();
+            return _context.Users.SingleOrDefault(x => x.Id == entityId);
         }
 
         public IEnumerable<User> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Users;
         }
 
         public void Dispose()
         {
             if (_context != null)
                 _context.Dispose();
+        }
+
+        public User GetUserByUserName(string userName)
+        {
+            return _context.Users.SingleOrDefault(x => x.Username.Equals(userName, StringComparison.InvariantCultureIgnoreCase));
         }
     }
 }

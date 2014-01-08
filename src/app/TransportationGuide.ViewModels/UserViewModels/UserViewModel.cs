@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TransportationGuide.Entities
+namespace TransportationGuide.ViewModels.Models
 {
-    public class User : IEntity
+    public class UserViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

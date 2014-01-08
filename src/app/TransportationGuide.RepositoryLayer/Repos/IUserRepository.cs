@@ -9,6 +9,6 @@ namespace TransportationGuide.RepositoryLayer.Repos
 {
     public interface IUserRepository : IRepository<User>
     {
-
+        User GetUserByUserName(string userName);
     }
 }

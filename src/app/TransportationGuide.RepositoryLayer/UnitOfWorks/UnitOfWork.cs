@@ -14,16 +14,17 @@ namespace TransportationGuide.RepositoryLayer.UnitOfWorks
     public class UnitOfWork : IUnitOfWork
     {
         readonly string ConnectionString;
-        readonly DbContext _context = null;
+        readonly EntitiesContext _context = null;
 
         IUserRepository _userRepository = null;
 
         public UnitOfWork()
         {
             //ConnectionStringi Configden al
-            ConnectionString = "ConnectionString";
+            ConnectionString = "TransportationGuideConnectionString";
             _context = new EntitiesContext(ConnectionString);
             _context.Configuration.LazyLoadingEnabled = true;
+            InitializeDataBase();
         }
 
         private void InitializeDataBase()

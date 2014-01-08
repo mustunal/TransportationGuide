@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportationGuide.Busines
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportationGuide.UI", "src\app\TransportationGuide.UI\TransportationGuide.UI.csproj", "{C8B77507-C347-4281-A110-20582A24BF82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportationGuide.Surrogates", "src\app\TransportationGuide.Surrogates\TransportationGuide.Surrogates.csproj", "{8C704446-2AF9-494D-9097-4EE3DD79A0CD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportationGuide.Entities", "src\app\TransportationGuide.Entities\TransportationGuide.Entities.csproj", "{8B7594D9-41D6-4754-B2C8-E3A415B87DBE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportationGuide.RepositoryLayer", "src\app\TransportationGuide.RepositoryLayer\TransportationGuide.RepositoryLayer.csproj", "{5631734E-EE86-4196-B4C1-A0AE19DB9C49}"
@@ -39,10 +37,6 @@ Global
 		{C8B77507-C347-4281-A110-20582A24BF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8B77507-C347-4281-A110-20582A24BF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8B77507-C347-4281-A110-20582A24BF82}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8C704446-2AF9-494D-9097-4EE3DD79A0CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C704446-2AF9-494D-9097-4EE3DD79A0CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C704446-2AF9-494D-9097-4EE3DD79A0CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C704446-2AF9-494D-9097-4EE3DD79A0CD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8B7594D9-41D6-4754-B2C8-E3A415B87DBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8B7594D9-41D6-4754-B2C8-E3A415B87DBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B7594D9-41D6-4754-B2C8-E3A415B87DBE}.Release|Any CPU.ActiveCfg = Release|Any CPU

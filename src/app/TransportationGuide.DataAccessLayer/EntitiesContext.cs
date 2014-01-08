@@ -20,7 +20,7 @@ namespace TransportationGuide.DataAccessLayer
         public EntitiesContext(string connectionStringName)
             : base(connectionStringName)
         {
-            
+
         }
 
         public DbSet<User> Users { get; set; }

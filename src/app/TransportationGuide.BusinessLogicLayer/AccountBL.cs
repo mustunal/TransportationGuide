@@ -24,13 +24,13 @@ namespace TransportationGuide.BusinessLogicLayer
                         if (user.Password.Equals(loginModel.Password, StringComparison.InvariantCultureIgnoreCase))
                             _userModel = new UserViewModel
                             {
-                                Id = _userModel.Id,
-                                BirthDate = _userModel.BirthDate,
-                                Email = _userModel.Email,
-                                Name = _userModel.Name,
-                                Password = _userModel.Password,
-                                Surname = _userModel.Surname,
-                                Username = _userModel.Username
+                                Id = user.Id,
+                                BirthDate = user.BirthDate,
+                                Email = user.Email,
+                                Name = user.Name,
+                                Password = user.Password,
+                                Surname = user.Surname,
+                                Username = user.Username
                             };
                     }
                 }

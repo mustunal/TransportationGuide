@@ -81,6 +81,9 @@ namespace TransportationGuide.UI.Controllers
                     var authManager = Request.GetOwinContext().Authentication;
                     authManager.SignIn(new AuthenticationProperties() { IsPersistent = model.RememberMe }, identity);
 
+                    //Session Ayarla
+                    HttpContext.Session["User"] = user;
+
                     if (Url.IsLocalUrl(returnUrl))
                         return Redirect(returnUrl);
                     else

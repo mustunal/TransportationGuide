@@ -6,37 +6,53 @@
 
 <div class="span9">
     <h2 class="main-heading bottom-line line-before"><strong>Profil Güncelle :</strong></h2>
-    <div class="box-white">
-        <div class="panel form-proper">
-            @using (Html.BeginForm("Update", "Profile", FormMethod.Post, new { @class = "proper-singup", role = "form" }))
-            {
-                @Html.AntiForgeryToken()
-                <hr />
+    <div class="box-panel box-white">
+        <div class="row-fluid">
+            <div class="span7">
                 <div class="box-white">
-                    <table class="table">
-                        <tr>
-                            <th>Adınız :  </th>
-                            <td>@Html.TextBoxFor(m => m.User.Name, new { @class = "input-block-level", @required = "true" }) </td>
-                        </tr>
-                        <tr>
-                            <th>Soyadınız : </th>
-                            <td>@Html.TextBoxFor(m => m.User.Name, new { @class = "input-block-level", @required = "true" })</td>
-                        </tr>
-                        <tr>
-                            <th>Kullanıcı Adınız : </th>
-                            <td>@Html.TextBoxFor(m => m.User.Username, new { @class = "input-block-level", @required = "true" })</td>
-                        </tr>
-                        <tr>
-                            <th>Emailiniz : </th>
-                            <td>@Html.TextBoxFor(m => m.User.Email, new { @type = "email", @class = "input-block-level", @required = "true" })</td>
-                        </tr>
-                        <tr>
-                            <th>Doğum Tarihiniz : </th>
-                            <td>@Html.TextBoxFor(m => m.User.BirthDate, new { @type = "date", @class = "input-block-level", @required = "true" })</td>
-                        </tr>
-                    </table>
+                    @using (Html.BeginForm("Update", "Profile", FormMethod.Post, new { role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                            <table class="table">
+                                <tr>
+                                    <th>Adınız :  </th>
+                                    <td>@Html.EditorFor(m => m.User.Name, new {  @class = "input-block-level", @required = "true" }) </td>
+                                </tr>
+                                <tr>
+                                    <th>Soyadınız : </th>
+                                    <td>@Html.TextBoxFor(m => m.User.Surname, new {@name="User.Surname", @class = "input-block-level", @required = "true" })</td>
+                                </tr>
+                                <tr>
+                                    <th>Kullanıcı Adınız : </th>
+                                    <td>@Html.TextBoxFor(m => m.User.Username, new {@name="User.Username", @class = "input-block-level", @required = "true" })</td>
+                                </tr>
+                                <tr>
+                                    <th>Emailiniz : </th>
+                                    <td>@Html.TextBoxFor(m => m.User.Email, new {@name="User.Email" ,@type = "email", @class = "input-block-level", @required = "true" })</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <button type="submit" class="btn gbtn btn-warning pull-right">Güncelle</button>
+                                    </td>
+                                </tr>
+                                @if (@ViewBag.UpdateResult != null)
+                                {
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="alert">
+                                                <button type="button" class="close" data-dismiss="alert">x</button>
+                                                <strong>@ViewBag.UpdateResult</strong>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                     }
                 </div>
-            }
             </div>
         </div>
- </div>
+    </div>
+</div>

@@ -42,5 +42,13 @@ namespace TransportationGuide.UI.Controllers
 
             return View("Update", userProfileModel);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update(UserProfileViewModel userProfile)
+        {
+            string name = userProfile.User.Name;
+            return RedirectToAction("View");
+        }
     }
 }

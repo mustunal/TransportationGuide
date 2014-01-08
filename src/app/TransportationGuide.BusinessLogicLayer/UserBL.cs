@@ -7,6 +7,7 @@ using TransportationGuide.RepositoryLayer.UnitOfWorks;
 using TransportationGuide.ViewModels.AccountViewModels;
 using TransportationGuide.Entities;
 using TransportationGuide.BusinessLogicLayer.OperationResults;
+using TransportationGuide.ViewModels.UserViewModels;
 
 namespace TransportationGuide.BusinessLogicLayer
 {
@@ -50,6 +51,66 @@ namespace TransportationGuide.BusinessLogicLayer
                 }
             }
             return _result;
+        }
+
+        public static UserViewModel GetUserById(int userId)
+        {
+            UserViewModel _userModel = null;
+            using (var uow = new UnitOfWork())
+            {
+                try
+                {
+                    User user = uow.UserRepository.FindById(userId);
+                    if (user != null)
+                    {
+                        _userModel = new UserViewModel
+                        {
+                            Id = user.Id,
+                            BirthDate = user.BirthDate,
+                            Email = user.Email,
+                            Name = user.Name,
+                            Password = user.Password,
+                            Surname = user.Surname,
+                            Username = user.Username
+                        };
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            return _userModel;
+        }
+
+        public static UserViewModel GetUserByUserName(string userName)
+        {
+            UserViewModel _userModel = null;
+            using (var uow = new UnitOfWork())
+            {
+                try
+                {
+                    User user = uow.UserRepository.GetUserByUserName(userName);
+                    if (user != null)
+                    {
+                        _userModel = new UserViewModel
+                        {
+                            Id = user.Id,
+                            BirthDate = user.BirthDate,
+                            Email = user.Email,
+                            Name = user.Name,
+                            Password = user.Password,
+                            Surname = user.Surname,
+                            Username = user.Username
+                        };
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            return _userModel;
         }
     }
 }

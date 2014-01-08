@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TransportationGuide.ViewModels.Models
+namespace TransportationGuide.ViewModels.UserViewModels
 {
     public class UserViewModel
     {

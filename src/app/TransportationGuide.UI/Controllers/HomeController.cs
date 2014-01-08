@@ -26,5 +26,10 @@ namespace TransportationGuide.UI.Controllers
 
             return View();
         }
+
+        public ActionResult NotFound()
+        {
+            return View("/Shared/Error");
+        }
     }
 }

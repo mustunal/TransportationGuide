@@ -19,6 +19,8 @@ namespace TransportationGuide.UI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            ModelBinderConfig.RegisterCustomModelBinders();
+
             AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.Name;
         }
     }

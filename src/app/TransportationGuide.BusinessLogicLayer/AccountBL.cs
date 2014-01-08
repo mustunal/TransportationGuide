@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TransportationGuide.ViewModels.AccountViewModels;
-using TransportationGuide.ViewModels.Models;
+using TransportationGuide.ViewModels.UserViewModels;
 using TransportationGuide.RepositoryLayer.UnitOfWorks;
 
 namespace TransportationGuide.BusinessLogicLayer

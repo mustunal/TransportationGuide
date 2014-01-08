@@ -72,6 +72,8 @@ namespace TransportationGuide.UI.Controllers
                 if (user != null)
                 {
                     var claims = new List<Claim>();
+                    claims.Add(new Claim(ClaimTypes.Sid, user.Id.ToString()));
+                    claims.Add(new Claim(ClaimTypes.UserData, user.Username));
                     claims.Add(new Claim(ClaimTypes.Name, user.Name));
                     claims.Add(new Claim(ClaimTypes.Surname, user.Surname));
                     claims.Add(new Claim(ClaimTypes.Email, user.Email));
@@ -80,6 +82,8 @@ namespace TransportationGuide.UI.Controllers
                     var identity = new ClaimsIdentity(claims, DefaultAuthenticationTypes.ApplicationCookie);
                     var authManager = Request.GetOwinContext().Authentication;
                     authManager.SignIn(new AuthenticationProperties() { IsPersistent = model.RememberMe }, identity);
+
+
 
                     //Session Ayarla
                     HttpContext.Session["User"] = user;
@@ -109,5 +113,11 @@ namespace TransportationGuide.UI.Controllers
         {
             return View();
         }
+
+        //[Authorize]
+        //public ActionResult View()
+        //{
+        //    return View();
+        //}
     }
 }
